@@ -1,11 +1,11 @@
 Summary:	An NFS traffic monitoring tool
 Name:		nfswatch
-Version:	4.99.8
+Version:	4.99.9
 Release:	%mkrel 1
 License:	BSD
 Group:		Monitoring
 URL:		http://nfswatch.sourceforge.net
-Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	nfswatch.init
 Source2:	nfswatch.sysconfig
 Source3:	nfswatch.logrotate
@@ -22,6 +22,7 @@ interfaces.
 Install nfswatch if you need a program to monitor NFS traffic.
 
 %prep
+
 %setup -q
 mkdir -p Mandriva
 cp %{SOURCE1} Mandriva/nfswatch.init
@@ -72,5 +73,3 @@ touch %{buildroot}%{_var}/log/nfswatch.log
 %{_sbindir}/nfslogsum
 %{_mandir}/man8/*
 %ghost %{_var}/log/nfswatch.log
-
-

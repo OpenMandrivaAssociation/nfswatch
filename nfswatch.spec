@@ -12,6 +12,7 @@ Source3:	nfswatch.logrotate
 BuildRequires:	ncurses-devel
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Nfswatch is a command-line tool for monitoring NFS traffic. Nfswatch can

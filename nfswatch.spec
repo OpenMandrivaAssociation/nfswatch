@@ -1,7 +1,7 @@
 Summary:	An NFS traffic monitoring tool
 Name:		nfswatch
 Version:	4.99.9
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	BSD
 Group:		Monitoring
 URL:		http://nfswatch.sourceforge.net
@@ -30,6 +30,8 @@ cp %{SOURCE2} Mandriva/nfswatch.sysconfig
 cp %{SOURCE3} Mandriva/nfswatch.logrotate
 
 %build
+%serverbuild
+
 %make
 
 %install

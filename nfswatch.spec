@@ -10,6 +10,7 @@ Source1:	nfswatch.init
 Source2:	nfswatch.sysconfig
 Source3:	nfswatch.logrotate
 BuildRequires:	ncurses-devel
+BuildRequires:	pcap-devel
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot

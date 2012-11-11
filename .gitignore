@@ -1,0 +1,4 @@
+nfswatch-4.99.11.tar.gz
+nfswatch.init
+nfswatch.logrotate
+nfswatch.sysconfig

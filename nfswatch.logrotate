@@ -1,0 +1,5 @@
+/var/log/nfswatch.log {
+    create 644 root root
+    monthly
+    compress
+}

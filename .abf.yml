@@ -1,5 +1,2 @@
 sources:
-  "nfswatch-4.99.11.tar.gz:"	185010ad9dbd70696d0424931b5b024545491881
-  "nfswatch.init:"	407a4f121dce9780d97b422b8c932196c8cf0d95
-  "nfswatch.logrotate:"	204b4b825843949c2b0b0c125f0479a52de263d7
-  "nfswatch.sysconfig:"	442611df5e2aebbdc901918a2e0fb247b751ae89
+  "nfswatch-4.99.11.tar.gz": 185010ad9dbd70696d0424931b5b024545491881

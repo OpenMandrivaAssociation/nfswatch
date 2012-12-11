@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# Startup script for the nfswatch daemon
+#
+# chkconfig: - 62 18
+# description: An NFS traffic monitoring tool
+# processname: nfswatch
+# pidfile: /var/run/nfswatch.pid
+# config: /etc/sysconfig/nfswatch
+
+# Comments to support LSB init script conventions
+### BEGIN INIT INFO
+# Provides: nfswatch
+# Required-Start: $network portmap nfs-server
+# Required-Stop: $network portmap nfs-server
+# Should-Start: portmap nfs-server
+# Should-Stop: portmap nfs-server
+# Default-Start:  3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: start and stop the nfswatch daemon
+# Description: An NFS traffic monitoring tool
+### END INIT INFO
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check for and source configuration file otherwise set defaults
+[ -f /etc/sysconfig/nfswatch ] && . /etc/sysconfig/nfswatch
+
+[ -x /usr/sbin/nfswatch ] || exit 0
+
+# See how we were called.
+case "$1" in
+  start)
+	echo -n "Starting nfswatch: "
+	daemon nfswatch -lf /var/log/nfswatch.log -bg ${NFSWATCH_OPTIONS}
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/nfswatch
+	;;
+  stop)
+	echo -n "Stopping nfswatch: "
+	killproc nfswatch
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/nfswatch
+	;;
+  status)
+	status nfswatch
+	RETVAL=$?
+	;;
+  restart|reload)
+	$0 stop
+	$0 start
+	RETVAL=$?
+	;;
+  *)
+	echo "Usage: nfswatch {start|stop|status|restart|reload}"
+	exit 1
+esac
+
+exit $RETVAL

@@ -1,7 +1,7 @@
 Summary:	An NFS traffic monitoring tool
 Name:		nfswatch
-Version:	4.99.11
-Release:	2
+Version:	4.99.13
+Release:	1
 License:	BSD
 Group:		Monitoring
 URL:		http://nfswatch.sourceforge.net

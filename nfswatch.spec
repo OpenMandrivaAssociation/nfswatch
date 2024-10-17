@@ -4,7 +4,7 @@ Version:	4.99.13
 Release:	1
 License:	BSD
 Group:		Monitoring
-URL:		http://nfswatch.sourceforge.net
+URL:		https://nfswatch.sourceforge.net
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	nfswatch.init
 Source2:	nfswatch.sysconfig

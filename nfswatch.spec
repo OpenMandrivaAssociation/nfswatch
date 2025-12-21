@@ -9,6 +9,7 @@ Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	nfswatch.init
 Source2:	nfswatch.sysconfig
 Source3:	nfswatch.logrotate
+BuildRequires:	make
 BuildRequires:	ncurses-devel
 BuildRequires:	pcap-devel
 Requires(post): rpm-helper
